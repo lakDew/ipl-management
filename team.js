@@ -20,7 +20,7 @@ function teamDetails(team)
    bats.innerHTML=`top Batsman: ${team.topBatsman}`;
    document.querySelector('.team-details').appendChild(bats);
    let bowler=document.createElement('p');
-   bowler.innerHTML=`top Batsman: ${team.topBowler}`;
+   bowler.innerHTML=`top Bowler: ${team.topBowler}`;
    document.querySelector('.team-details').appendChild(bowler);
    let total=document.createElement('p');
    total.innerHTML=`Total Players: ${players[teamKey].length}`;
