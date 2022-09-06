@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./player.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,12 +9,26 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="ipl-logo">
-        <img src="https://secureservercdn.net/198.71.233.203/j54.d43.myftpupload.com/wp-content/uploads/2021/04/IPL-logo.jpg?time=1661473247" alt="">
-    </div>
+    <header>
+
+        <div class="ipl-logo">
+            <img src="https://secureservercdn.net/198.71.233.203/j54.d43.myftpupload.com/wp-content/uploads/2021/04/IPL-logo.jpg?time=1661473247" alt="">
+        </div>
+
+        <div class="search-bar">
+
+            <input type="text" class="search-input" placeholder="enter player's name">
+            <div>
+             <i class="search-icon fa-solid fa-magnifying-glass "></i>
+            </div>
+
+        </div>
+    </header>
+   
     <main>
-    <div class="player-details"></div>
-     </main>
+        <div class="player-details"></div>
+    </main>
+
     <script src="./player.js"></script>
 </body>
 </html>

@@ -14,9 +14,24 @@ header{
 }
 .ipl-logo{
     width:150px;
+    cursor: pointer;
 }
 .ipl-logo img{
     width:100%
+}
+.team-details-wrapper{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px 70px;
+    box-shadow:0px 0px 2px 2px  rgb(202, 192, 192) ;
+}
+.team-logo{
+    width:200px;
+    margin-right: 20px;
+}
+.team-logo img{
+    width: 100%;
 }
 .create-player{
     border:1px solid rgb(58, 54, 54);
@@ -242,6 +257,22 @@ header{
             }
     
         
+    }
+
+    @media only screen and (max-width: 700px){
+          
+        .team-details-wrapper{
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: column;
+            align-items: flex-end;
+            padding: 20px 20px;
+            box-shadow:0px 0px 2px 2px  rgb(202, 192, 192) ;
+        }
+        .team-logo{
+            width:150px;
+            margin-right: 20px;
+        }
     }
 
     @media only screen and (max-width: 520px){

@@ -2,33 +2,86 @@
     padding: 0px;
     margin: 0px;
 }
+header{
+    display:flex;
+    align-items: center;
+    padding: 10px 70px;
+    justify-content: space-between;
+    box-shadow: 0px 0px 2px 2px  rgb(202, 192, 192) ;
+}
 .ipl-logo{
-    width:300px;
+    width:200px;
+    cursor: pointer;
+    
 }
 .ipl-logo img{
     width: 100%;
 }
+.search-bar {
+    border: 1px solid rgb(150, 135, 135);
+    border-radius: 2px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    
+    
+    
+    }
+    .search-bar .search-input{
+        height:32px;
+        width: 400px;
+        border: none;
+        font-size: 18px;
+        outline: none;
+    }
+    .search-bar div{
+        background-color: rgb(202, 192, 192) ;
+        display: flex;
+        align-items: center;
+       
+    
+    }
+    .search-bar .search-icon{
+        font-size: 20px;
+        padding: 0px 10px;
+       cursor:pointer;
+        color: white ;
+        font-weight: 700;
+        
+    }
+
 main{
     
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top:70px
+    margin-top:30px;
+   
 }
 .photo{
     width:500px;
     border-radius: 50%;
     overflow: hidden;
     margin: 0 auto;
+    border:1px solid rgb(44, 44, 80);
+    background-color: antiquewhite;
+    
 }
 .photo img{
  width:100%
 }
 .player-details{
-    background-color: rgb(178, 212, 212);
+    background-color: rgb(198, 218, 218);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 0px 20px;
+    margin: 20px;
+}
+.details{
+    display: flex;
 }
 .name{
-    display: inline-block;
+   
     font-size: 30px;
     padding: 10px 20px;
     box-shadow:  0px 0px 2px 2px  rgb(202, 192, 192) ;
@@ -36,7 +89,7 @@ main{
     background-color: wheat;
 }
 .team{
-    display:inline-block;
+    
     font-size: 30px;
     padding: 10px 20px;
     box-shadow:  0px 0px 2px 2px  rgb(202, 192, 192) ;
@@ -44,7 +97,7 @@ main{
     background-color: wheat;
 }
 .description{
-    display:inline-block;
+    
     font-size: 30px;
     padding: 10px 20px;
     box-shadow:  0px 0px 2px 2px  rgb(202, 192, 192) ;
@@ -53,11 +106,85 @@ main{
     
 
 .price{
-    display:inline-block;
+    
+    font-size: 30px;
+    padding: 10px 20px;
+    box-shadow:  0px 0px 2px 2px  rgb(202, 192, 192) ;
+    margin: 30px 10px;background-color: wheat;
+}
+.playing{
     font-size: 30px;
     padding: 10px 20px;
     box-shadow:  0px 0px 2px 2px  rgb(202, 192, 192) ;
     margin: 30px 10px;background-color: wheat;
 }
 
+@media only screen and (max-width: 990px){
+
+    .details{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+}
+@media only screen and (max-width: 760px){
+    header{
+        display:flex;
+        align-items: center;
+        padding: 10px 20px;
+        justify-content: space-between;
+        box-shadow: 0px 0px 2px 2px  rgb(202, 192, 192) ;
+    }
+  
+    .ipl-logo{
+        width:150px;
+    }
+    .search-bar .search-input{
+        height:32px;
+        width: 300px;
+        border: none;
+        font-size: 18px;
+        outline: none;
+    }
+    .photo{
+        width:500px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto;
+        border:1px solid rgb(44, 44, 80);
+        background-color: antiquewhite;
+        
+    }
+}
+
+@media only screen and (max-width: 560px){
+    header{
+        display:flex;
+        align-items: center;
+        padding: 10px 10px;
+        justify-content: space-between;
+        box-shadow: 0px 0px 2px 2px  rgb(202, 192, 192) ;
+    }
+  
+    .ipl-logo{
+        width:100px;
+        
+    }
+    .search-bar .search-input{
+        height:32px;
+        width: 200px;
+        border: none;
+        font-size: 18px;
+        outline: none;
+    }
+    .photo{
+        width:350px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto;
+        border:1px solid rgb(44, 44, 80);
+        background-color: antiquewhite;
+        
+    }
 }

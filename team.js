@@ -11,7 +11,7 @@ let teamKey=`${team.key.toLowerCase()}Players`;
 function teamDetails(team)
 {
 
-
+    
    let teamname=document.createElement('p');
    teamname.innerHTML=team.teamName;
    document.querySelector('.team-details').appendChild(teamname);
@@ -28,6 +28,8 @@ function teamDetails(team)
    let won=document.createElement('p');
    won.innerHTML=`Championship Won: ${team.noOfWins}`;
    document.querySelector('.team-details').appendChild(won);
+
+   document.querySelector('.team-logo img').src=team.teamLogoUrl
    
 }
 teamDetails(team)
@@ -92,10 +94,10 @@ function allPlayer(){
   
   function isPlaying(status){
     if(status==true||status=='true'){
-        return 'playing'
+        return 'Playing'
     }
     else{
-        return 'not playing'
+        return 'On Bench'
     }
   }
 
@@ -235,19 +237,11 @@ function allPlayer(){
     document.querySelector(".search-icon").addEventListener('click',function(e){
         let name=document.querySelector(".search-input").value.toUpperCase();
         
-        console.log(name)
-        let found;
-        for(let a of players[teamKey]){
-            if(a.playerName.toUpperCase()==name){
-                
-                found=a;
-                break;
-            }
-        }
-        console.log(found)
-        if(found){
+        let found=playerDetails(name);
+       
+        if(found.length==2){
             document.querySelector(".search-input").value='';
-            location.href=`./player.html?id=${teamId}&${found.id}`
+            location.href=`./player.html?id=${found[0]}&${found[1]}`
         }
         else{
             document.querySelector(".search-input").value='';
@@ -256,6 +250,38 @@ function allPlayer(){
     })
   }
   search();
+
+  function playerDetails(name){
+    let found;
+    let teamArr=Object.keys(players);
+    let result=[];
+
+    for(a of teamArr){
+        for(let b of players[a]){
+
+            if(b.playerName.toUpperCase()==name){
+                found=b;
+                break;
+            }
+            if(found){
+                break;
+            }
+        }
+    }
+    if(found){
+        let teams=JSON.parse(localStorage.getItem('teams'));
+        let foundteam=teams.find(function(item){
+            return found.from.toUpperCase()==item.key.toUpperCase()
+        });
+        result.push(foundteam.id);
+        result.push(found.id);
+    }
+    return result;
+
+  }
+
+
+
 
   function bodyEvent(){
 
@@ -270,9 +296,13 @@ function allPlayer(){
     console.log(e.target.classList[0])
      if(e.target.classList[0]!='search-icon'&&e.target.classList[0]!='search-input'){
       document.querySelector('.search-input').value='';
-      document.querySelector('.search-input').placeholder='enter team name or key';
+      document.querySelector('.search-input').placeholder="enter player's name";
      }
   
     })
   }
   bodyEvent();
+
+  document.querySelector(".ipl-logo").addEventListener('click',function(e){
+    location.href='./index.html'
+  })
